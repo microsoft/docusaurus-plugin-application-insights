@@ -7,7 +7,7 @@ validatePeerDependencies(__dirname);
 
 export default function pluginApplicationInsights(
   _context: LoadContext,
-  options: PluginOptions
+  options: PluginOptions,
 ): Plugin {
   const isProd = process.env.NODE_ENV === 'production';
   return {
@@ -28,7 +28,9 @@ export default function pluginApplicationInsights(
         headTags: [
           {
             tagName: 'script',
-            innerHTML: `window.appInsightsPluginConfig = ${JSON.stringify(options)};`,
+            innerHTML: `window.appInsightsPluginConfig = ${JSON.stringify(
+              options,
+            )};`,
           },
         ],
       };
