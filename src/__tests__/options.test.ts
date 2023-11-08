@@ -15,56 +15,68 @@ describe('application-insights options', () => {
   it('throws for undefined options', () => {
     expect(
       // @ts-expect-error: TS should error
-      () => testValidateOptions(undefined)
+      () => testValidateOptions(undefined),
     ).toThrowErrorMatchingInlineSnapshot('"\\"config\\" is required"');
   });
 
   it('throws for null options', () => {
     expect(
       // @ts-expect-error: TS should error
-      () => testValidateOptions(null)
-    ).toThrowErrorMatchingInlineSnapshot('"\\"value\\" must be of type object"');
+      () => testValidateOptions(null),
+    ).toThrowErrorMatchingInlineSnapshot(
+      '"\\"value\\" must be of type object"',
+    );
   });
 
   it('throws for empty object options', () => {
-    expect(() => testValidateOptions({} as unknown as Options)).toThrowErrorMatchingInlineSnapshot(
-      '"\\"config\\" is required"'
-    );
+    expect(() =>
+      testValidateOptions({} as unknown as Options),
+    ).toThrowErrorMatchingInlineSnapshot('"\\"config\\" is required"');
   });
 
   it('throws for number options', () => {
     expect(
       // @ts-expect-error: TS should error
-      () => testValidateOptions(42)
-    ).toThrowErrorMatchingInlineSnapshot('"\\"value\\" must be of type object"');
+      () => testValidateOptions(42),
+    ).toThrowErrorMatchingInlineSnapshot(
+      '"\\"value\\" must be of type object"',
+    );
   });
 
   it('throws for null instrumentationKey', () => {
     expect(
       // @ts-expect-error: TS should error
-      () => testValidateOptions({ config: { instrumentationKey: null } })
-    ).toThrowErrorMatchingInlineSnapshot('"\\"config.instrumentationKey\\" must be a string"');
+      () => testValidateOptions({ config: { instrumentationKey: null } }),
+    ).toThrowErrorMatchingInlineSnapshot(
+      '"\\"config.instrumentationKey\\" must be a string"',
+    );
   });
 
   it('throws for number instrumentationKey', () => {
     expect(
       // @ts-expect-error: TS should error
-      () => testValidateOptions({ config: { instrumentationKey: 42 } })
-    ).toThrowErrorMatchingInlineSnapshot('"\\"config.instrumentationKey\\" must be a string"');
+      () => testValidateOptions({ config: { instrumentationKey: 42 } }),
+    ).toThrowErrorMatchingInlineSnapshot(
+      '"\\"config.instrumentationKey\\" must be a string"',
+    );
   });
 
   it('throws for null connectionString', () => {
     expect(
       // @ts-expect-error: TS should error
-      () => testValidateOptions({ config: { connectionString: null } })
-    ).toThrowErrorMatchingInlineSnapshot('"\\"config.connectionString\\" must be a string"');
+      () => testValidateOptions({ config: { connectionString: null } }),
+    ).toThrowErrorMatchingInlineSnapshot(
+      '"\\"config.connectionString\\" must be a string"',
+    );
   });
 
   it('throws for number connectionString', () => {
     expect(
       // @ts-expect-error: TS should error
-      () => testValidateOptions({ config: { connectionString: 42 } })
-    ).toThrowErrorMatchingInlineSnapshot('"\\"config.connectionString\\" must be a string"');
+      () => testValidateOptions({ config: { connectionString: 42 } }),
+    ).toThrowErrorMatchingInlineSnapshot(
+      '"\\"config.connectionString\\" must be a string"',
+    );
   });
 
   it('validates missing options', () => {
@@ -75,7 +87,7 @@ describe('application-insights options', () => {
     expect(() => {
       testValidateOptions(options);
     }).toThrowErrorMatchingInlineSnapshot(
-      '"\\"config\\" must contain at least one of [instrumentationKey, connectionString]"'
+      '"\\"config\\" must contain at least one of [instrumentationKey, connectionString]"',
     );
   });
 
@@ -90,7 +102,7 @@ describe('application-insights options', () => {
     expect(() => {
       testValidateOptions(options);
     }).toThrowErrorMatchingInlineSnapshot(
-      '"\\"config\\" contains a conflict between exclusive peers [instrumentationKey, connectionString]"'
+      '"\\"config\\" contains a conflict between exclusive peers [instrumentationKey, connectionString]"',
     );
   });
 

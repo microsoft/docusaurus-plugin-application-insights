@@ -29,7 +29,7 @@ Example:
 }`;
 
 export function normalizeConfig(
-  maybeLegacyOptions: ApplicationInsightsConfig | PluginOptions
+  maybeLegacyOptions: ApplicationInsightsConfig | PluginOptions,
 ): PluginOptions {
   // If we have a `config` property, we're using the new configuration API
   if ('config' in maybeLegacyOptions) {
@@ -91,7 +91,9 @@ const pluginOptionsSchema = Joi.object<PluginOptions>({
     disableAjaxTracking: Joi.boolean().optional(),
     disableFetchTracking: Joi.boolean().optional(),
     excludeRequestFromAutoTrackingPatterns: Joi.array()
-      .items(Joi.alternatives().try(Joi.string(), Joi.object().instance(RegExp)))
+      .items(
+        Joi.alternatives().try(Joi.string(), Joi.object().instance(RegExp)),
+      )
       .optional(),
     addRequestContext: Joi.func().optional(),
     overridePageViewDuration: Joi.boolean().optional(),
@@ -99,7 +101,9 @@ const pluginOptionsSchema = Joi.object<PluginOptions>({
     disableDataLossAnalysis: Joi.boolean().optional(),
     disableCorrelationHeaders: Joi.boolean().optional(),
     distributedTracingMode: Joi.string().optional(),
-    correlationHeaderExcludedDomains: Joi.array().items(Joi.string()).optional(),
+    correlationHeaderExcludedDomains: Joi.array()
+      .items(Joi.string())
+      .optional(),
     disableFlushOnBeforeUnload: Joi.boolean().optional(),
     disableFlushOnUnload: Joi.boolean().optional(),
     enableSessionStorageBuffer: Joi.boolean().optional(),
@@ -129,13 +133,15 @@ const pluginOptionsSchema = Joi.object<PluginOptions>({
     correlationHeaderDomains: Joi.array().items(Joi.string()).optional(),
     autoUnhandledPromiseInstrumented: Joi.boolean().optional(),
     enableUnhandledPromiseRejectionTracking: Joi.boolean().optional(),
-    correlationHeaderExcludePatterns: Joi.array().items(Joi.object().instance(RegExp)).optional(),
+    correlationHeaderExcludePatterns: Joi.array()
+      .items(Joi.object().instance(RegExp))
+      .optional(),
     customHeaders: Joi.array()
       .items(
         Joi.object({
           header: Joi.string().required(),
           value: Joi.string().required(),
-        })
+        }),
       )
       .optional(),
     convertUndefined: Joi.any().optional(),
