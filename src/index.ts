@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
 import type { LoadContext, Plugin } from '@docusaurus/types';
 import { PluginOptions, Options, normalizeConfig } from './options';
 import { resolve } from 'node:path';
