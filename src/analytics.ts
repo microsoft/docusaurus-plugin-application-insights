@@ -1,6 +1,8 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+/// <reference lib="dom" />
+
 import { ClickAnalyticsPlugin } from '@microsoft/applicationinsights-clickanalytics-js';
 import { ApplicationInsights } from '@microsoft/applicationinsights-web';
 import type { ClientModule } from '@docusaurus/types';
