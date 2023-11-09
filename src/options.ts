@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
 import { deprecate } from 'node:util';
 import { Joi } from '@docusaurus/utils-validation';
 import type { OptionValidationContext } from '@docusaurus/types';
