@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "composite": true,
+    "incremental": true,
+    "lib": ["ESNext", "dom"],
+    "tsBuildInfoFile": "./lib/.tsbuildinfo-client",
+    "moduleResolution": "bundler",
+    "module": "esnext",
+    "target": "esnext",
+    "rootDir": "src",
+    "outDir": "lib"
+  },
+  "include": ["src/analytics.ts", "src/*.d.ts"],
+  "exclude": ["**/__tests__/**"]
+}
