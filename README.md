@@ -15,7 +15,7 @@ This plugin is only active in production mode.
 Install the plugin
 
 ```bash npm2yarn
-npm install @rise4fun/docusaurus-plugin-application-insights
+npm install @microsoft/docusaurus-plugin-application-insights
 ```
 
 Add the plugin to your plugin configuration along with the [application-insights-web configuration](https://github.com/microsoft/ApplicationInsights-JS#snippet-configuration-options) object.
@@ -24,16 +24,24 @@ Add the plugin to your plugin configuration along with the [application-insights
 const config = {
     plugins: [
         ...,
-        // highlight-start
         ["@microsoft/docusaurus-plugin-application-insights", {
             config: {
-                instrumentationKey: "YOUR INSTRUMENTATION KEY HERE"
+                instrumentationKey: "YOUR KEY HERE"
             }
+            enableClickAnalytics: false,
         }]
-        // highlight-end
     ]
 }
 ```
+
+## Options
+
+The following options are available:
+
+| Field | Type | Required | Default&nbsp;Value | Description |
+| ----- | ---- | -------- | ------------- | ----------- |
+| config | [ApplicationInsightsConfig](https://github.com/microsoft/docusaurus-plugins/blob/93e73418af086ae0cd821dc56c28b01f9515f7f2/packages/docusaurus-plugin-application-insights/src/options.ts#L10) | Yes | N/A | This object holds the configuration for Application Insights. It has many possible fields including `instrumentationKey`, `endpointUrl`, `maxBatchInterval`, etc. See [ApplicationInsights-JS Configuration](https://github.com/microsoft/ApplicationInsights-JS#configuration) for full details. |
+| enableClickAnalytics | boolean | No | `false` | If set to `true`, enables click analytics. |
 
 ## Contributing
 
