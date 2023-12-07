@@ -70,6 +70,6 @@
     "github": {
       "release": true
     },
-    "npm": false
+    "npm": true
   }
 }
