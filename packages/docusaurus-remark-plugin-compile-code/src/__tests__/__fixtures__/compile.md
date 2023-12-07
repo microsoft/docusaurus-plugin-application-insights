@@ -1,5 +1,0 @@
-Some snippets
-
-```echo
-foo
-```
