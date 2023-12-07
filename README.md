@@ -1,41 +1,14 @@
-# Rise4fun Docusaurus plugins
+# `@rise4fun/docusaurus-plugin-application-insights`
 
-This repository contains plugins for Docusaurus to support creating rich documentation for programming languages tools.
+Docusaurus plugin to support Microsoft Application Insights ([npm.js](https://www.npmjs.com/package/@rise4fun/docusaurus-plugin-application-insights)).
 
-- [Read the documentation](https://microsoft.github.io/docusaurus-plugins).
+## Usage
 
-## Development
-
-Install [Volta](https://docs.volta.sh/guide/getting-started), if you haven't got it installed already.
-
-Once installed, Volta will automatically install the correct version of Node.js and Yarn for this project - no need to install them manually.
-
-Install dependencies,
-
-```bash
-yarn install
-```
-
-To build plugins and final web site,
-
-```bash
-yarn build
-```
-
-To run a local development server,
-
-```bash
-yarn start
-```
-
-To create releases, use the semantic release commit syntax
-
-- `feat: ...` for a minor version bump
-- `fix: ...` for a patch version bump
+See [docusaurus-plugin-application-insights documentation](https://microsoft.github.io/docusaurus-plugins/docs/plugins/docusaurus-plugin-application-insights).
 
 ## Contributing
 
-This project welcomes contributions and suggestions. Most contributions require you to agree to a
+This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
 

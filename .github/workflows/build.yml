@@ -22,18 +22,11 @@ jobs:
       - uses: actions/checkout@v3
       - uses: volta-cli/action@v4
 
-      - name: Cache ris4fun compile code
-        id: docusaurus-rise4fun-compile-code
-        uses: actions/cache@v3
-        with:
-          path: website/.docusaurus/docusaurus-remark-plugin-compile-code/
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-
-      - name: yarn install
+      - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Build all
+      - name: Build
         run: yarn build
 
-      - name: Test all
+      - name: Test
         run: yarn test
