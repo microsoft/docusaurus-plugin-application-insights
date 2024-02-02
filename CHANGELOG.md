@@ -1,4 +1,9 @@
 
+## v4.0.1 (2024-02-02)
+
+- Republish due to invalid package contents
+
+
 ## v4.0.0 (2024-01-31)
 
 #### :boom: Breaking Change

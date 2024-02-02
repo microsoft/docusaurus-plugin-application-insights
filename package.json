@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/docusaurus-plugin-application-insights",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Microsoft Application Insights plugin for Docusaurus.",
   "keywords": [
     "Docusaurus"
